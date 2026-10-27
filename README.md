@@ -1,3 +1,4 @@
+
 ﻿# Apna Route – Smart Route Finder and Travel Cost Calculator
 
 Apna Route is a full-stack smart travel planning web application featuring route navigation, travel distance/duration estimation, fuel cost calculation, and personalized route saving.
@@ -36,23 +37,23 @@ MyProject/
 4. Open ackend/database/schema.sql from this project, copy its entire contents, and paste them into the SQL Editor.
 5. Click **Run** (or press Ctrl + Enter).
 6. Verify that the following tables appear under **Table Editor**:
-   - profiles (linked to uth.users)
-   - user_preferences (linked to uth.users)
-   - saved_routes (linked to uth.users, protected by RLS)
-   - 	ravel_calculations (linked to uth.users, protected by RLS)
+   - profiles (linked to  uth.users)
+   - user_preferences (linked to  uth.users)
+   - saved_routes (linked to  uth.users, protected by RLS)
+   - 	ravel_calculations (linked to  uth.users, protected by RLS)
 
 ### Step 2: Configure Environment Variables
 1. In your Supabase Project Dashboard, click **Project Settings** (gear icon) > **API**.
 2. Find:
    - **Project URL** (e.g., https://abcdefghijklm.supabase.co)
-   - **Project API Keys** > non / public (starts with eyJ...)
+   - **Project API Keys** >  non / public (starts with eyJ...)
 3. Open ackend/.env in your editor and update the Supabase section:
    `env
    # Supabase Cloud PostgreSQL Configuration
    SUPABASE_URL=https://your-project-id.supabase.co
    SUPABASE_PUBLISHABLE_KEY=your_actual_supabase_anon_publishable_key
    `
-   > ⚠️ **Security Notice**: Only use the non / public key. Never expose your service_role secret key in client-facing code or ordinary endpoints.
+   > ⚠️ **Security Notice**: Only use the  non / public key. Never expose your service_role secret key in client-facing code or ordinary endpoints.
 
 ---
 
@@ -109,11 +110,15 @@ The React frontend will start on http://localhost:5173 (or port assigned by Vite
 ---
 
 ## 🔒 Security & Row Level Security (RLS)
-- **Zero Plaintext Passwords**: Authentication is managed securely through Supabase Auth (uth.users).
+- **Zero Plaintext Passwords**: Authentication is managed securely through Supabase Auth ( uth.users).
 - **PostgREST + RLS**: Endpoints use the requesting user's JWT access token (client.postgrest.auth(token)).
-- **Tenant Isolation**: PostgreSQL policies (uth.uid() = user_id) ensure users cannot view, modify, or delete routes or calculations belonging to other users.
+- **Tenant Isolation**: PostgreSQL policies ( uth.uid() = user_id) ensure users cannot view, modify, or delete routes or calculations belonging to other users.
 
 ## 📍 Nearby Petrol Pumps and Location
 - During local development, Vite proxies `/api` requests to the Flask server at `http://127.0.0.1:5000`.
 - When the frontend and backend are deployed on different hosts, set `VITE_API_BASE_URL` in `frontend/.env` to the backend origin (for example, `https://api.example.com`).
 - Nearby fuel searches include both point-mapped and area-mapped OpenStreetMap stations. Changing either route location clears its previous coordinates so the next search uses the newly entered location.
+
+# Web-development
+My web development project
+
